@@ -13,9 +13,9 @@ import java.util.function.Supplier
 
 @Configuration
 class RestTemplateConfig(
-    @Value("repository.connection-timeout")
+    @Value("\${repository.connection-timeout}")
     private val connectionTimeout: Int,
-    @Value("repository.read-timeout")
+    @Value("\${repository.read-timeout}")
     private val readTimeout: Int
 ) {
     val bufferingFactorySupplier = Supplier<ClientHttpRequestFactory> {

@@ -8,7 +8,7 @@ import java.net.URI
 
 @Component
 class Endpoint(
-    @Value("weather-forecast.api-url")
+    @Value("\${weather-forecast.api-url}")
     private var weatherForecastUrl: String
 ) {
     fun getUri(param: WeatherForecastParam): URI =
