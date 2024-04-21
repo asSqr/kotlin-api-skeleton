@@ -6,5 +6,4 @@ import java.util.concurrent.CompletableFuture
 interface WeatherForecastRepository {
 
     fun forecast(latitude: Float, longitude: Float): CompletableFuture<ForecastInfo>
-
 }

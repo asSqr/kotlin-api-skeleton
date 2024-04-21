@@ -1,7 +1,5 @@
 package com.kotlin.api.skeleton.kotlin.api.skeleton.domain.model.forecast
 
-import com.fasterxml.jackson.annotation.JsonProperty
-
 data class ForecastInfo(
     val latitude: Float,
     val longitude: Float,

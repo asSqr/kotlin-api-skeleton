@@ -9,7 +9,7 @@ import org.springframework.web.context.annotation.RequestScope
 
 @Component
 @RequestScope
-class ApplicationLogger: Logger {
+class ApplicationLogger : Logger {
 
     companion object {
         fun init() {
@@ -32,5 +32,4 @@ class ApplicationLogger: Logger {
     override fun logLongitude(longitude: Float) {
         MDC.put(ApplicationLogEnum.LONGITUDE.columnName, longitude.toString())
     }
-
 }

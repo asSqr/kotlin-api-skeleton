@@ -19,5 +19,4 @@ class StatisticsLogger(private val logger: Logger) {
             logger.logSuccessfulStatus()
         }
     }
-
 }

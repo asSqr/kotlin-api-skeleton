@@ -7,5 +7,4 @@ interface Logger {
     fun logLatitude(latitude: Float)
 
     fun logLongitude(longitude: Float)
-
 }

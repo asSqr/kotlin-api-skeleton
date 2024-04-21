@@ -12,5 +12,4 @@ class ClockConfig {
     fun clock(): Clock {
         return Clock.system(ZoneId.of("Asia/Tokyo"))
     }
-
 }

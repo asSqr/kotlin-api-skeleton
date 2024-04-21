@@ -6,7 +6,7 @@ class SkeletonException(
     val forecastError: SkeletonError,
     val description: String? = null,
     val throwable: Throwable? = null
-): RuntimeException(description, throwable)
+) : RuntimeException(description, throwable)
 
 enum class SkeletonError(val apiStatus: String, val httpStatus: HttpStatus) {
     ValidationFormatError("1000", HttpStatus.BAD_REQUEST),

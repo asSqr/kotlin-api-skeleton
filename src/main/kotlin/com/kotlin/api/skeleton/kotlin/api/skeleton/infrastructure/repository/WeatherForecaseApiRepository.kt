@@ -21,7 +21,7 @@ import java.util.concurrent.CompletableFuture
 class WeatherForecaseApiRepository(
     private val endpoint: Endpoint,
     private val restTemplate: RestTemplate
-): WeatherForecastRepository {
+) : WeatherForecastRepository {
 
     @Async
     override fun forecast(latitude: Float, longitude: Float): CompletableFuture<ForecastInfo> {
@@ -46,7 +46,7 @@ class WeatherForecaseApiRepository(
                 else -> {
                     throw SkeletonException(
                         SkeletonError.UnexpectedError,
-                            description = it.message
+                        description = it.message
                     )
                 }
             }
@@ -58,21 +58,20 @@ class WeatherForecaseApiRepository(
                 longitude = weatherForecastInfo.longitude,
                 elevation = weatherForecastInfo.elevation,
                 generationTimeMs = weatherForecastInfo.generationTimeMs,
-                    utcOffsetSeconds = weatherForecastInfo.utcOffsetSeconds,
-                    timezone = weatherForecastInfo.timezone,
-                    timezoneAbbreviation = weatherForecastInfo.timezoneAbbreviation,
-                    hourly = HourlyInfo(
-                        time = weatherForecastInfo.hourly.time,
-                        temperature2m = weatherForecastInfo.hourly.temperature2m,
-                        weatherCode = weatherForecastInfo.hourly.weatherCode,
-                    ),
-                    hourlyUnits = HourlyUnits(
-                        temperature2m = weatherForecastInfo.hourlyUnits.temperature2m
-                    )
+                utcOffsetSeconds = weatherForecastInfo.utcOffsetSeconds,
+                timezone = weatherForecastInfo.timezone,
+                timezoneAbbreviation = weatherForecastInfo.timezoneAbbreviation,
+                hourly = HourlyInfo(
+                    time = weatherForecastInfo.hourly.time,
+                    temperature2m = weatherForecastInfo.hourly.temperature2m,
+                    weatherCode = weatherForecastInfo.hourly.weatherCode
+                ),
+                hourlyUnits = HourlyUnits(
+                    temperature2m = weatherForecastInfo.hourlyUnits.temperature2m
+                )
             )
         )
     }
 
-    class WeatherForecastApiRepositoryException(message: String): RuntimeException(message)
-
+    class WeatherForecastApiRepositoryException(message: String) : RuntimeException(message)
 }

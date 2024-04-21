@@ -30,5 +30,4 @@ class RestTemplateConfig(
         .setReadTimeout(Duration.ofSeconds(readTimeout.toLong()))
         .requestFactory(bufferingFactorySupplier)
         .build()
-
 }

@@ -17,7 +17,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 @RestControllerAdvice
 class SkeletonExceptionHandler(
     private val applicationLogger: ApplicationLogger
-): ResponseEntityExceptionHandler() {
+) : ResponseEntityExceptionHandler() {
 
     companion object {
         val log = Logger<SkeletonExceptionHandler>()
@@ -91,5 +91,4 @@ class SkeletonExceptionHandler(
                 )
             }
         }
-
 }

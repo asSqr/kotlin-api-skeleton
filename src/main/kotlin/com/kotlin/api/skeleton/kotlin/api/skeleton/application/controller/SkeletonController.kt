@@ -31,7 +31,7 @@ class SkeletonController(
 
         logger.handleResultLog(result)
 
-        return when(result) {
+        return when (result) {
             is ForecastResult.Success -> {
                 ForecastResponse(apiStatus = SuccessfulStatus)
             }
