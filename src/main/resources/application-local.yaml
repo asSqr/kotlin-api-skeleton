@@ -1,0 +1,10 @@
+weather-forecast:
+  api-url: https://api.open-meteo.com/v1
+logging:
+  level:
+    com:
+      kotlin:
+        api:
+          skeleton:
+            api:
+              skeleton: DEBUG

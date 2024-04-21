@@ -16,5 +16,4 @@ class HealthCheckController {
     fun checkHealth(): String {
         return "Alive"
     }
-
 }

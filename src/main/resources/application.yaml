@@ -1,0 +1,25 @@
+spring:
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:local}
+  lifecycle:
+    timeout-per-shutdown-phase: 30s
+repository:
+  connection-timeout: 1
+  read-timeout: 1
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+          - prometheus
+  metrics:
+    enable:
+      all: false
+      logback: true
+      http:
+        server:
+          requests: true
+server:
+  port: 80
+  shutdown: graceful
