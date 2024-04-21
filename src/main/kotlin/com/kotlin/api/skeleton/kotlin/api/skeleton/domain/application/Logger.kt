@@ -4,6 +4,8 @@ interface Logger {
 
     fun logSuccessfulStatus()
 
-    fun logRegion(region: String)
+    fun logLatitude(latitude: Float)
+
+    fun logLongitude(longitude: Float)
 
 }

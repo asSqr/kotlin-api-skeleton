@@ -10,7 +10,8 @@ import org.springframework.web.context.annotation.RequestScope
 class StatisticsLogger(private val logger: Logger) {
 
     fun handleRequestLog(requestBody: ForecastRequest) {
-        logger.logRegion(requestBody.region)
+        logger.logLatitude(requestBody.latitude)
+        logger.logLongitude(requestBody.longitude)
     }
 
     fun handleResultLog(result: ForecastResult) {

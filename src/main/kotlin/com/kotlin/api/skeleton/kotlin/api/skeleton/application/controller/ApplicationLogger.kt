@@ -25,8 +25,12 @@ class ApplicationLogger: Logger {
         logStatus(SuccessfulStatus)
     }
 
-    override fun logRegion(region: String) {
-        MDC.put(ApplicationLogEnum.REGION.columnName, region)
+    override fun logLatitude(latitude: Float) {
+        MDC.put(ApplicationLogEnum.LATITUDE.columnName, latitude.toString())
+    }
+
+    override fun logLongitude(longitude: Float) {
+        MDC.put(ApplicationLogEnum.LONGITUDE.columnName, longitude.toString())
     }
 
 }

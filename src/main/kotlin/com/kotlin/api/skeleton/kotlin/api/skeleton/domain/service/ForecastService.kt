@@ -12,9 +12,13 @@ class ForecastService(
     private val weatherForecastRepository: WeatherForecastRepository
 ) {
     fun forecast(
-        region: String
+        latitude: Float,
+        longitude: Float
     ): ForecastResult {
-        val weatherForecastTask = weatherForecastRepository.forecast(region)
+        val weatherForecastTask = weatherForecastRepository.forecast(
+            latitude,
+            longitude
+        )
 
         CompletableFuture.allOf(
             *arrayListOf<CompletableFuture<*>>()

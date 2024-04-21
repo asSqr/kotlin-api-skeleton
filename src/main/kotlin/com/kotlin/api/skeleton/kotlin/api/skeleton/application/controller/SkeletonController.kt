@@ -27,7 +27,7 @@ class SkeletonController(
         logger.handleRequestLog(requestBody)
 
         val result = forecastService
-            .forecast(requestBody.region)
+            .forecast(requestBody.latitude, requestBody.longitude)
 
         logger.handleResultLog(result)
 

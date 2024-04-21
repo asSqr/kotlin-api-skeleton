@@ -11,5 +11,6 @@ class SkeletonException(
 enum class SkeletonError(val apiStatus: String, val httpStatus: HttpStatus) {
     ValidationFormatError("1000", HttpStatus.BAD_REQUEST),
     ForecastFailureError("1001", HttpStatus.OK),
+    WeatherForecastApiError("1002", HttpStatus.INTERNAL_SERVER_ERROR),
     UnexpectedError("9000", HttpStatus.INTERNAL_SERVER_ERROR)
 }
