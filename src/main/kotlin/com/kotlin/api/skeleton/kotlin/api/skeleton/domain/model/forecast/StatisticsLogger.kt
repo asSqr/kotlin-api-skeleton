@@ -18,5 +18,8 @@ class StatisticsLogger(private val logger: Logger) {
         if (result is ForecastResult.Success) {
             logger.logSuccessfulStatus()
         }
+
+        result.apply {
+        }
     }
 }

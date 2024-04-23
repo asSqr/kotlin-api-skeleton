@@ -67,7 +67,9 @@ class WeatherForecaseApiRepository(
                     weatherCode = weatherForecastInfo.hourly.weatherCode
                 ),
                 hourlyUnits = HourlyUnits(
-                    temperature2m = weatherForecastInfo.hourlyUnits.temperature2m
+                    time = weatherForecastInfo.hourlyUnits.time,
+                    temperature2m = weatherForecastInfo.hourlyUnits.temperature2m,
+                    weatherCode = weatherForecastInfo.hourlyUnits.weatherCode
                 )
             )
         )

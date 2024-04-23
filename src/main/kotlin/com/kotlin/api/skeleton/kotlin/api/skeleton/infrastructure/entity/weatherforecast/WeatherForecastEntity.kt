@@ -21,12 +21,15 @@ data class WeatherForecastEntity(
 data class HourlyInfo(
     val time: List<String>,
     @field: JsonProperty("temperature_2m")
-    val temperature2m: List<Int>,
+    val temperature2m: List<Float>,
     @field: JsonProperty("weather_code")
-    val weatherCode: Int
+    val weatherCode: List<Int>
 )
 
 data class HourlyUnits(
+    val time: String,
     @field: JsonProperty("temperature_2m")
-    val temperature2m: String
+    val temperature2m: String,
+    @field: JsonProperty("weather_code")
+    val weatherCode: String
 )

@@ -1,5 +1,6 @@
 package com.kotlin.api.skeleton.kotlin.api.skeleton.domain.service
 
+import com.kotlin.api.skeleton.kotlin.api.skeleton.domain.model.forecast.ForecastInfo
 import com.kotlin.api.skeleton.kotlin.api.skeleton.domain.model.forecast.ForecastResult
 import com.kotlin.api.skeleton.kotlin.api.skeleton.domain.model.forecast.StatisticsLogger
 import com.kotlin.api.skeleton.kotlin.api.skeleton.domain.repository.WeatherForecastRepository
@@ -28,6 +29,8 @@ class ForecastService(
                 .toTypedArray()
         ).join()
 
-        return ForecastResult.Success(result = "success")
+        val forecastInfo: ForecastInfo = weatherForecastTask.join()
+
+        return ForecastResult.Success(result = forecastInfo)
     }
 }

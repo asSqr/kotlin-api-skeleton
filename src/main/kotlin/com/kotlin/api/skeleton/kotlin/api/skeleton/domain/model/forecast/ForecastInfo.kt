@@ -14,10 +14,12 @@ data class ForecastInfo(
 
 data class HourlyInfo(
     val time: List<String>,
-    val temperature2m: List<Int>,
-    val weatherCode: Int
+    val temperature2m: List<Float>,
+    val weatherCode: List<Int>
 )
 
 data class HourlyUnits(
-    val temperature2m: String
+    val time: String,
+    val temperature2m: String,
+    val weatherCode: String
 )

@@ -2,6 +2,8 @@ package com.kotlin.api.skeleton.kotlin.api.skeleton.application.controller
 
 import com.kotlin.api.skeleton.kotlin.api.skeleton.application.model.ForecastRequest
 import com.kotlin.api.skeleton.kotlin.api.skeleton.application.model.ForecastResponse
+import com.kotlin.api.skeleton.kotlin.api.skeleton.application.model.HourlyInfo
+import com.kotlin.api.skeleton.kotlin.api.skeleton.application.model.HourlyUnits
 import com.kotlin.api.skeleton.kotlin.api.skeleton.application.model.SuccessfulStatus
 import com.kotlin.api.skeleton.kotlin.api.skeleton.domain.model.SkeletonError
 import com.kotlin.api.skeleton.kotlin.api.skeleton.domain.model.SkeletonException
@@ -33,7 +35,26 @@ class SkeletonController(
 
         return when (result) {
             is ForecastResult.Success -> {
-                ForecastResponse(apiStatus = SuccessfulStatus)
+                ForecastResponse(
+                    apiStatus = SuccessfulStatus,
+                    latitude = result.result.latitude,
+                    longitude = result.result.longitude,
+                    elevation = result.result.elevation,
+                    generationTimeMs = result.result.generationTimeMs,
+                    utcOffsetSeconds = result.result.utcOffsetSeconds,
+                    timezone = result.result.timezone,
+                    timezoneAbbreviation = result.result.timezoneAbbreviation,
+                    hourly = HourlyInfo(
+                        time = result.result.hourly.time,
+                        temperature2m = result.result.hourly.temperature2m,
+                        weatherCode = result.result.hourly.weatherCode
+                    ),
+                    hourlyUnits = HourlyUnits(
+                        time = result.result.hourlyUnits.time,
+                        temperature2m = result.result.hourlyUnits.temperature2m,
+                        weatherCode = result.result.hourlyUnits.weatherCode
+                    )
+                )
             }
             is ForecastResult.Failure -> {
                 throw SkeletonException(SkeletonError.ForecastFailureError)
