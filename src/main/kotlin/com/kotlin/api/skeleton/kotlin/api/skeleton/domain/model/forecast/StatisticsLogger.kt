@@ -19,7 +19,9 @@ class StatisticsLogger(private val logger: Logger) {
             logger.logSuccessfulStatus()
         }
 
-        result.apply {
+        result.result.apply {
+            latitude.let { logger.logLatitude(it) }
+            longitude.let { logger.logLongitude(it) }
         }
     }
 }
